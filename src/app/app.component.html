@@ -1,4 +1,8 @@
-<hello name="{{ name }}"></hello>
+<nav>
+  <a class="nav-link" routerLink="/home" *ngIf="userService.isGuest()"> Home </a> 
+  <a class="nav-link" routerLink="/login" *ngIf="userService.isGuest()"> | Login </a>
+  <a class="nav-link" (click)="logout()" *ngIf="!userService.isGuest()"> Logout </a>
+</nav>
 <p>
-  Start editing to see some magic happen :)
+<router-outlet></router-outlet>
 </p>
